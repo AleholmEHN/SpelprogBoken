@@ -1,0 +1,32 @@
+<!DOCTYPE=html>
+<html>
+<head>
+    <title>Exempel sidan 19</title>
+</head>
+
+<body>
+    <script src="http://spelprogrammering.nu/simple.js">
+        function start()
+        {
+            var name = prompt("Hej, vad heter du?");
+            var age = prompt("Hur gammal är du?");
+
+            text(50, 150, 20, "Hej " + name + "!" , "black");
+
+            if (age < 20)
+            {
+                text(50, 250, 20, "Glöm det", "black");
+            }
+            else if (age < 25)
+            {
+                text(50, 250, 20, "Visa legitimation", "black");
+            }
+            else
+            {
+                text(50, 250, 20, "Oj vad gammal du är!", "black");   
+            }
+        }
+        
+        </script>
+</body>
+</html>
