@@ -1,0 +1,45 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    runtAnsikte = prompt("Hade tjuven runt ansikte?");
+    
+    storaOgon = prompt("Hade tjuven stora ögon?");
+    
+    rundaOron = prompt("Hade tjuven runda öron?");
+    
+    svartHar = prompt("Hade tjuven svart hår?");
+    
+    if (runtAnsikte == "ja")
+        circle(200, 200, 100, "beige");
+    else
+        rectangle(100, 100, 200, 200, "beige");
+    
+    if (storaOgon == "ja")
+    {
+        circle(150, 170, 20, "black");
+        circle(250, 170, 20, "black");
+    }
+    else
+    {
+        circle(150, 170, 10, "black");
+        circle(250, 170, 10, "black");
+    }
+    
+    if (rundaOron == "ja")
+    {
+        circle(100, 200, 20, "beige");  
+        circle(300, 200, 20, "beige");
+    }
+    else
+    {
+      rectangle(80, 200, 20,20, "beige"); 
+        rectangle(300, 200, 20, 20, "beige");
+    }
+    
+    if (svartHar == "ja")
+        rectangle(80, 100, 240, 20, "black");
+    else
+        rectangle(80, 100, 240, 20, "yellow");
+
+    
+</script>
+
