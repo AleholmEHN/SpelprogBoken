@@ -1,0 +1,33 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    function start()
+    {
+        ballX = 0;
+        ballY = 0;  // Eftersom vi ska använda dem i update kan vi inte ha dem lokala
+        // Därför står det INTE var framför variablerna.        
+    }
+    
+    function update()
+    {
+        clearScreen();
+        
+        if (keyboard.left)      // Om vi tryckt ned vänster pil
+        {
+            ballX--;        // betyder samma som ballX = ballX - 1;
+        }
+        if (keyboard.right)
+        {
+            ballX++;
+        }
+        if (keyboard.up)
+        {
+            ballY--;        // Tänk på att koordinaterna är "upp och ned"
+        }
+        if (keyboard.down)
+        {
+            ballY++;
+        }
+        circle(ballX, ballY, 50, "red");
+    }
+    
+</script>

@@ -1,0 +1,54 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    // Här introducerar vi en ny sorts variabel "objekt".
+    // Detta kan innehålla flera saker.
+    // Vi kommer åt varje sak med punkt (.)
+    
+    function start()
+    {
+        cat = { x: 100, y: 100, speed : 10};
+        // Vi har skapat en "katt" med x-position, y-position och hastighet.
+    
+    }
+    
+    function update()
+    {
+        clearScreen();
+        
+        if (keyboard.left)
+        {
+            cat.x = cat.x - cat.speed;      // Kan också skrivas som cat.x -= cat.speed
+        }
+        if (keyboard.right)
+        {
+            cat.x = cat.x + cat.speed;      // Kan också skrivas som cat.x += cat.speed
+        }
+        if (keyboard.up)
+        {
+            cat.y -= cat.speed;      // Samma som cat.y = cat.y - cat.speed
+        }
+        if (keyboard.down)
+        {
+            cat.y += cat.speed;      //  Samma som cat.y = cat.y + cat.speed
+        }
+
+        circle(cat.x, cat.y, 20, "black");
+        circle(mouse.x, mouse.y, 20, "red");
+        
+       if ( Math.abs(cat.x - mouse.x) < 40 && Math.abs(cat.y - mouse.y) < 40)
+        {
+            stopUpdate();       // Stanna uppdateringen
+        }
+        
+        // I boken gör de med en extern funktion "distance"
+        /*
+        if (distance(cat.x, cat.y, mouse.x, mouse.y) < 40)
+        {
+            stopUpdate();
+        }
+        */
+    
+    }
+
+
+</script>
