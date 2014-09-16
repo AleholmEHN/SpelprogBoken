@@ -1,0 +1,74 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    function start()
+    {
+        ballRadie = 50;
+        ballX = ballRadie;
+        ballY = ballRadie;  // Eftersom vi ska använda dem i update kan vi inte ha dem lokala
+        // Därför står det INTE var framför variablerna.   
+        squareSize = 50;
+        squareX = 0;
+        squareY = 0;
+    }
+    
+    function update()
+    {
+        clearScreen();
+        
+        if (keyboard.left)      // Om vi tryckt ned vänster pil
+        {
+            ballX--;        // betyder samma som ballX = ballX - 1;
+            if (ballX < (0 + ballRadie))
+                ballX++;        // Utanför skärmen
+        }
+        if (keyboard.right)
+        {
+            ballX++;
+            if (ballX > (totalWidth-ballRadie))
+                ballX--;        // Utanför skärmen
+ 
+        }
+        if (keyboard.up)
+        {
+           ballY--;        // Tänk på att koordinaterna är "upp och ned"
+           if (ballY < (0 + ballRadie))
+                ballY++;        // Utanför skärmen
+        }
+        if (keyboard.down)
+        {
+            ballY++;
+           if (ballY > (totalHeight-ballRadie))
+                ballY--;        // Utanför skärmen
+            
+        }
+        circle(ballX, ballY, 50, "red");
+        
+ /* Reagerar på asdw också, styr en kvadrat */
+        if(keyboard.a)
+        {
+            squareX--;
+            if (squareX < 0)
+                squareX++;
+        }
+        if (keyboard.d)
+        {
+            squareX++;
+            if (squareX > (totalWidth - squareSize))
+                squareX--;
+        }
+        if(keyboard.w)
+        {
+            squareY--;
+            if (squareY < 0)
+                squareY++;
+        }
+        if (keyboard.s)
+        {
+            squareY++;
+            if (squareY > (totalHeight - squareSize))
+                squareY--;
+        }
+        rectangle(squareX, squareY, squareSize, squareSize, "blue"); 
+    }
+    
+</script>
