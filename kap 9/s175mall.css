@@ -1,5 +1,16 @@
-            canvas1
-            {
-                border: 5px dashed red;
-                background-color: green;
-            }
+#canvas1
+{
+    border: 5px solid red;
+}
+
+
+#canvas2
+{
+    border: 5px dashed green;
+}
+
+#canvas3
+{
+    border: 5px double blue;
+}
+
