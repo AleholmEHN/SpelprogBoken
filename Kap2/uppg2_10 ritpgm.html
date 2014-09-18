@@ -1,0 +1,63 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    function start()
+    {
+        minFarg = "red";
+        minPensel = "c";        // För cirkel
+    }
+    
+    
+    function update()
+    {
+        if (mouse.left)
+        {
+            if (minPensel == "c")
+            {
+                circle(mouse.x, mouse.y, 10, minFarg);
+            }
+            else
+            {
+                rectangle(mouse.x-5, mouse.y-5, 10, 10, minFarg);
+            }    
+        }
+        if (mouse.right)
+        {
+            if (minPensel == "c")
+            {
+                circle(mouse.x, mouse.y, 10, "white");
+            }
+            else
+            {
+                rectangle(mouse.x-5, mouse.y-5, 10, 10, "white");  
+            }
+        }
+        if (keyboard.r)
+        {
+            minFarg = "red";
+        }
+        if (keyboard.g)
+        {
+            minFarg = "green";
+        }
+        if (keyboard.b)
+        {
+            minFarg = "blue";
+        }
+        if (keyboard.y)
+        {
+            minFarg = "yellow";
+        }
+        if (keyboard.c)
+        {
+            minPensel = "c";
+        }
+        if (keyboard.q)
+        {
+            minPensel = "s";    //Square
+        }
+           
+        
+    }
+    
+    
+</script>
