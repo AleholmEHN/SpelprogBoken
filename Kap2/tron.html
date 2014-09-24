@@ -19,10 +19,44 @@
         rectangle(cycle.x, cycle.y, cycle.size, cycle.size, "blue");
         cycle.score++;
         
+        // "Måla över" poängrutan innan den skrivs igen.
+        rectangle(10, 10, totalWidth-20, 80, "white");
+        text(20, 75, 70, "TRON | Score: " + cycle.score, "blue");
         
- //       cycle.x += cycle.xSpeed*cycle.size;   // Förstår inte riktigt.....
-        cycle.x += cycle.xSpeed;
-//        cycle.y += cycle.ySpeed*cycle.size;
+        // Kontrollera tangentbordet
+        if (keyboard.left)
+        {
+            cycle.xSpeed = -1;
+            cycle.ySpeed = 0;
+        }
+        if (keyboard.right)
+        {
+            cycle.xSpeed = 1;
+            cycle.ySpeed = 0;
+        }
+        if (keyboard.up)
+        {
+            cycle.xSpeed = 0;
+            cycle.ySpeed = -1;
+        }
+        if (keyboard.down)
+        {
+            cycle.xSpeed = 0;
+            cycle.ySpeed = 1;
+        }
+
+        
+        
+        cycle.x += cycle.xSpeed*cycle.size;
+        cycle.y += cycle.ySpeed*cycle.size;
+ 
+        // Kontroll om man krockat med blått.
+        if (getPixel(cycle.x, cycle.y).blue != 0)
+        {
+            rectangle(cycle.x, cycle.y, cycle.size, cycle.size, "red");
+            alert("END OF LINE");
+            stopUpdate();
+        }
         
     }
 
