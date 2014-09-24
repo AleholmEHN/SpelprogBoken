@@ -13,6 +13,18 @@
         
         line(0,100, totalWidth, 100, 5, "blue");
     }
+    
+    function update()
+    {
+        rectangle(cycle.x, cycle.y, cycle.size, cycle.size, "blue");
+        cycle.score++;
+        
+        
+ //       cycle.x += cycle.xSpeed*cycle.size;   // Förstår inte riktigt.....
+        cycle.x += cycle.xSpeed;
+//        cycle.y += cycle.ySpeed*cycle.size;
+        
+    }
 
 
 </script>
