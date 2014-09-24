@@ -1,0 +1,143 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    p1Points = 0;
+    p2Points = 0;
+
+
+    function start()
+    {
+        ball = { x :totalWidth/2, y :totalHeight / 2, size:20, xSpeed:5, ySpeed :0};
+        
+        paddles = {speed:15, width: 20, height:80, distanceToWall:20};
+        // Detta är bara hur en paddel ser ut.
+        // Den paddeln vi kan rita ut har x och y-värden
+        p1 = {x:paddles.distanceToWall, y:totalHeight/2 - paddles.height/2};  // Den vänstra
+        p2 = {x:totalWidth - paddles.distanceToWall-paddles.width, y:p1.y};  // Den högra.
+        
+        // Slumpa höger eller vänster
+        if (random(2) == 1)
+        {
+            ball.xSpeed = ball.xSpeed*(-1);
+        }
+        
+        if (p1Points >= 2 || p2Points >= 2)   // Spelet är slut
+        {
+            stopUpdate();
+            alert("Spelet är över");
+        }
+        
+    }
+    
+    
+    function update()
+    {
+        if (keyboard.up)
+        {
+            p2.y -= paddles.speed;
+            if (p2.y < 0)
+            {
+                p2.y += paddles.speed;      // Har kört i taket
+            }   
+        }
+        if (keyboard.down)
+        {
+            p2.y += paddles.speed;
+            if (p2.y > totalHeight - paddles.height)
+            {
+                p2.y -= paddles.speed;      // Har kört i botten
+            }   
+        }
+        if (keyboard.w)
+        {
+            p1.y -= paddles.speed;
+            if (p1.y < 0)
+            {
+                p1.y += paddles.speed;      // Har kört i taket
+            }   
+        }
+        if (keyboard.s)
+        {
+            p1.y += paddles.speed;
+            if (p1.y > totalHeight - paddles.height)
+            {
+                p1.y -= paddles.speed;      // Har kört i botten
+            }   
+        }
+
+        
+        
+        ball.x = ball.x + ball.xSpeed;
+        ball.y = ball.y + ball.ySpeed;
+        
+        if (ball.y < 0 + ball.size  || ball.y > totalHeight - ball.size)
+        {
+            ball.ySpeed = ball.ySpeed*(-1);
+        }
+
+        if (ball.x < 0 + ball.size)
+        {
+            p2Points++;
+            start();
+        }
+        else if (ball.x > totalWidth - ball.size)
+        {
+            // Här ska spelet starta om
+            p1Points++;
+            start();
+        }  
+        
+        // Kontrollera om bollen krockar med paddles, ändra i så fall x-värdet
+        if ((ball.y > p1.y) && (ball.y < p1.y + paddles.height) && 
+            (ball.x < p1.x + paddles.width + ball.size))
+        {
+            ball.xSpeed = ball.xSpeed*(-1);
+            // Kontrollera var det träffade för att ställa in ySpeed.
+            if (ball.y > p1.y + 2*paddles.height/3)   // Träffar i nederkant
+            {
+                ball.ySpeed = random(5)+5;
+            }
+            else if (ball.y < p1.y + paddles.height/3)  // Träffar i överkant
+            {
+                ball.ySpeed = -(random(5)+5);
+            }
+            else
+            {
+                ball.ySpeed = 0;
+            }    
+        }
+        else if ((ball.y > p2.y) && (ball.y < p2.y + paddles.height) &&
+                 (ball.x > p2.x-ball.size))
+        {
+            ball.xSpeed = ball.xSpeed*(-1);
+            if (ball.y > p2.y + 2*paddles.height/3)   // Träffar i nederkant
+            {
+                ball.ySpeed = random(5)+5;
+            }
+            else if (ball.y < p2.y + paddles.height/3)  // Träffar i överkant
+            {
+                ball.ySpeed = -(random(5) + 5);
+            }
+            else
+            {
+                ball.ySpeed = 0;
+            }
+
+        }
+        
+        
+        // Rita om skärmen
+        fill("black");     // Fyll hela rutan med svart
+        text(totalWidth/2-100, 30, 20, "PONG", "white");
+        text(0, 30, 20, "Spelare 1: " + p1Points, "white");
+        text(totalWidth-200, 30, 20, "Spelare 2: " + p2Points, "white");
+       
+        circle(ball.x, ball.y, ball.size, "white");
+        rectangle(p2.x, p2.y, paddles.width, paddles.height, "white");
+        rectangle(p1.x, p1.y, paddles.width, paddles.height, "white");
+    }
+    
+
+
+
+
+</script>
