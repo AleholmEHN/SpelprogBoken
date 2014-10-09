@@ -1,0 +1,45 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    
+
+    var xStart = 0;
+    var xEnd = totalWidth;
+    var yStart = 0;
+    var yEnd = totalHeight;
+    var antal = 22;
+    var xSteg = totalWidth / 10;
+     var ySteg = totalHeight / 5;
+   
+    for (var i = 0; i < antal; i++)
+    {
+        line(xStart, yStart, xEnd, yEnd, 1, "black");
+        xEnd -= xSteg;
+    }
+    xStart = totalWidth;
+    xEnd = 0;
+    
+    for (var i = 0; i < antal; i++)
+    {
+        line(xStart, yStart, xEnd, yEnd, 1, "black");
+        xEnd += xSteg;
+        
+    }
+    
+    xStart = 0;
+    xEnd = totalWidth;
+    for (var i = 0; i < antal; i++)
+    {
+         line(xStart, yStart, xEnd, yEnd, 1, "black");
+        yEnd -= ySteg;
+       
+    }
+    xStart = totalWidth;
+    xEnd = 0;
+    for (var i = 0; i < antal; i++)
+    {
+         line(xStart, yStart, xEnd, yEnd, 1, "black");
+        yEnd += ySteg;
+       
+    }
+   
+
+</script>

@@ -1,0 +1,29 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    
+
+    var xPos = 100;
+    var yPos = 100;
+    var size = 50;
+    
+    for (var j = 0; j < 4; j++)
+    {
+        for (var i = 0; i < 8; i++)
+        {
+            if (i % 2 == 0)
+                rectangle(xPos, yPos, size, size,  "black" );
+            xPos += size;
+        }
+        yPos += size;
+        xPos = 100;
+        for (var i = 0; i < 8; i++)
+        {
+            if (i % 2 == 1)
+                rectangle(xPos, yPos, size, size,  "black" );
+            xPos += size;
+        }
+        xPos = 100;
+        yPos += size;
+    }
+
+
+</script>

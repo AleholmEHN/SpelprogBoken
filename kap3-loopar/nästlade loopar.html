@@ -1,0 +1,21 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    var kol = prompt("Antal kolumner");
+    var row = prompt("Antal rader");
+    var xPos = 100;
+    var yPos = 100;
+    var size = 30;
+    
+    for (var i = 0; i < row; i++)
+    {
+        for (var j = 0; j < kol; j++)
+        {
+           circle(xPos, yPos, size, "red");
+            xPos += size*2;
+        }
+        yPos += size*2;
+        xPos = 100;
+    }
+    
+
+</script>

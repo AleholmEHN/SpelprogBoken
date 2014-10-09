@@ -1,0 +1,22 @@
+<script>
+    
+
+    var text = prompt("Mata in bilens värde");
+    var varde = parseInt(text);
+    var antalAr = 0;
+    var minskning = 0.85;       // - 15%
+    text = prompt("Mata in slutvärde");
+    stoppVarde = parseInt(text);
+    
+    while (stoppVarde <= varde)
+    {
+        antalAr++;
+        varde *= minskning;
+        
+    }
+    
+    alert("Efter " + antalAr + " år är bilens värde mindre än " + stoppVarde);
+    
+
+
+</script>

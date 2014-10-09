@@ -1,0 +1,21 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    var kol = 10;
+    var row = 10;
+    var xPos = 50;
+    var yPos = 50;
+    var size = 20;
+    
+    for (var i = 1; i <= row; i++)
+    {
+        for (var j = 1; j <= kol; j++)
+        {
+           text(xPos, yPos, size, i*j, "black");
+            xPos += size*3;
+        }
+        yPos += size;
+        xPos = 50;
+    }
+    
+
+</script>
