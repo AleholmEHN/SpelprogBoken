@@ -1,0 +1,19 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    
+    var antalDagar = 1;
+    var onskatVarde = 1000000;
+    var totaltBelopp = 0.01;
+    var dagsLon = 0.01;
+    
+    while (totaltBelopp < onskatVarde)
+    {
+        antalDagar++;
+        dagsLon = dagsLon*2;
+        totaltBelopp += dagsLon;
+    }
+    alert("Du blir miljonär efter " + antalDagar + " dagar");
+    
+    
+
+</script>

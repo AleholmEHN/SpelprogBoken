@@ -1,0 +1,17 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    var antal = prompt("Hur många?");
+    var xPos = 100;
+    var yPos = 100;
+    for (var i = 1; i <= antal; i++)
+    {
+        circle(xPos, yPos, 50, "red");
+        xPos = xPos + 100;
+        if ((i % 10)== 0)
+        {
+            xPos = 100;
+            yPos += 100;
+        }
+    }
+
+</script>
