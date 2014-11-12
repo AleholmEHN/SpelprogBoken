@@ -1,0 +1,36 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+
+function drawZombie(x,y)
+{
+    save();     // Sparar koordinatsystemets nuvarade läge
+    translate(x,y);     // Förflyttar koordinatsystemet
+    rectangle(3,30,23,65, "lightgreen");
+    rectangle(3,15,23,65, "gray");
+    circle(15,0,20,"lightgreen");
+    circle(0,0,3, "red");
+    rectangle(-35, 20, 30, 14, "lightgreen");
+    rectangle(-20, 20, 30, 14, "gray");
+    restore();      // återställer koordinatsystemet
+}
+
+    
+function start()
+{
+/*    drawZombie(100, 200);
+    drawZombie(320, 300);
+    drawZombie(100, 400);
+    drawZombie(250, 100);*/
+    
+    for (var i = 0; i < 100; i++)
+    {
+        drawZombie(random(totalWidth), random(totalHeight));
+    }
+}
+
+
+
+
+
+
+</script>

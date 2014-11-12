@@ -1,0 +1,56 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    var faceSize = 50;
+
+function totempole(x,y, antal)
+{
+    save();     // Sparar koordinatsystemets nuvarade läge
+    translate(x,y);     // Förflyttar koordinatsystemet
+
+    for (var i = 0; i < antal; i++)
+    {
+        drawface(x, y+faceSize*i);
+    }
+    
+     restore();      // återställer koordinatsystemet
+}
+
+function drawface(x,y)
+{
+    save();     // Sparar koordinatsystemets nuvarade läge
+    translate(x,y);     // Förflyttar koordinatsystemet
+    
+    rectangle(-1, -1, faceSize+2,faceSize+2, "black");
+    rectangle(0,0,faceSize, faceSize, "white");
+    circle(15, 15, 9, "green");
+    circle(35, 15, 9, "green");
+    circle(15, 15, 7, "red");
+    circle(35, 15, 7, "red");
+    circle(15, 15, 5, "white");
+    circle(35, 15, 5, "white");
+    circle(15, 15, 3, "black");
+    circle(35, 15, 3, "black");
+    rectangle(10, 30, 30, 15, "red");
+    rectangle(15, 35, 20, 5, "white");
+    triangle(17, 25, 23, 25, 23, 30, "red");
+    triangle(37, 25, 31, 25, 31, 30, "red");
+    
+    restore();      // återställer koordinatsystemet
+    
+}
+    
+function start()
+{
+    fill("brown");
+    
+    totempole(100,100, 8);
+
+}
+    
+
+
+
+
+
+
+</script>

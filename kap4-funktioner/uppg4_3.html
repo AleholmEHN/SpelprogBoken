@@ -1,0 +1,45 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+
+function start()
+{
+    drawCar(100, 100, randomColor(), "sedan");
+    drawCar(500, 500, randomColor(), "kombi");
+}
+    
+function drawCar(x, y, color, type)
+{
+    save();
+    translate(x,y);
+    
+    rectangle(0,0,200, 50, color);
+    triangle(30, 0, 50, 0, 50, -50, color);
+    triangle(33, -1, 50, -1, 50, -47, "white");
+    if (type == "sedan")
+    {
+        rectangle(50, -50, 100, 50, color);
+        triangle(150, -50, 180, 0, 150, 0, color);
+    }
+    else    // Det är en kombi
+    {
+        rectangle(50, -50, 150, 50, color);
+    }
+        rectangle(53, -48, 95, 47, "white");
+    
+    
+    
+    circle(40, 50, 15, "black");
+    circle(160, 50, 15, "black");
+    
+    restore();
+    
+}
+
+    
+function randomColor()
+{
+    return mixColor(random (256), random(256), random(256));
+}
+
+
+</script>
