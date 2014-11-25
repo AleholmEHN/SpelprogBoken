@@ -1,0 +1,81 @@
+<script src="copy_simple.js">
+
+    function Zombie()
+    {
+        this.distanceToBase = totalWidth;
+        this.speed = 1 + random(5);
+        this.angle = random(360);
+        this.dead = false;
+        
+        this.update = function()
+        {
+            save();
+            translate(totalWidth / 2, totalHeight/2);
+            this.distanceToBase -= this.speed;
+            rotate(this.angle);
+            translate(this.distanceToBase, 0);
+            
+            if (this.angle > 90 && this.angle < 270)
+            {
+                scale(1, -1);
+            }
+            scale(0.5, 0.5);
+            
+            rectangle(3,30, 23, 65, "lightgreen");
+            rectangle(3,15,23,65, "gray");
+            circle(15, 0, 20, "lightgreen");
+            circle(0,0,3, "red");
+            rectangle(-35, 20, 30, 14, "lightgreen");
+            rectangle(-20, 20, 30, 14, "gray");
+            restore();
+        };
+    }
+    
+    function start()
+    {
+        zombies = [];       // Plats för många zombies
+        zombiesKilled = 0;
+        
+        base = { x: totalWidth /2 - 15,
+                y : totalHeight / 2 - 25,
+                size: 30 };
+    }
+    
+    function update()
+    {
+        fill("black");
+        
+        rectangle(base.x, base.y, 50, base.size, "red");
+        
+        // Loopa igenom alla zombisar
+        for (var i = 0; i < zombies.length ; i++)
+        {
+            var zombie = zombies[i];    // SPara temporärt
+            if (!zombie.dead)
+            {
+                zombie.update();
+            }
+            
+            if (mouse.left && getPixel(mouse.x, mouse.y).green > 0)
+            {   // Om musen träffar grönt är det en zombie
+                zombiesKilled++;
+                circle(mouse.x, mouse.y, 20, "red");    // Markera träff
+                zombie.dead = true;
+            }
+            if (zombie.distanceToBase < base.size)
+            {
+                text(100, 200, 30, "BASE SELF DESTRUCT", "yellow");
+                stopUpdate();
+            }
+        }
+        text(10, 45, 15, "Zombies killed: " + zombiesKilled, "white");
+        
+        // Skapa fler zombies
+        if (random(10) == 0)
+        {
+            zombies.push(new Zombie());
+        }
+    }
+    
+    
+</script>

@@ -1,0 +1,31 @@
+<script src="copy_simple.js">
+
+    function Spindel()
+    {
+        this.x = totalWidth/2;
+        this.y = totalHeight/2; // Föds i mitten
+        
+        
+        this.draw = function()
+        {
+            save();
+            translate(this.x, this.y);
+            
+            circle(0, 0, 20, "black");
+            circle(30, 0, 20, "black");
+            restore();
+        }
+    }
+    
+    
+    
+    
+    function start()
+    {
+        minSpindel = new Spindel();
+        minSpindel.draw();
+    
+    }
+    
+    
+</script>
