@@ -50,7 +50,7 @@
         // Loopa igenom alla zombisar
         for (var i = 0; i < zombies.length ; i++)
         {
-            var zombie = zombies[i];    // SPara temporärt
+            var zombie = zombies[i];    // Spara temporärt
             if (!zombie.dead)
             {
                 zombie.update();
@@ -62,11 +62,11 @@
                 circle(mouse.x, mouse.y, 20, "red");    // Markera träff
                 zombie.dead = true;
             }
-            if (zombie.distanceToBase < base.size)
+/*            if (zombie.distanceToBase < base.size)
             {
                 text(100, 200, 30, "BASE SELF DESTRUCT", "yellow");
                 stopUpdate();
-            }
+            }*/
         }
         text(10, 45, 15, "Zombies killed: " + zombiesKilled, "white");
         

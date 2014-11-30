@@ -15,10 +15,10 @@
             circle(-10, 0, 20, "black");
             circle(30, 0, 20, "black");
             circle(40, 0, 15, "black");
-            line(0,20,0,40, 2, "red");
-            line(-15,20,-20,40, 2, "red");
-            line(10, 10, 20, 40, 2, "red");
-            line(-25, 10, -35, 40, "red");
+            line(0,20,0,40, 2, "black");
+            line(-15,20,-20,40, 2, "black");
+            line(10, 10, 20, 40, 2, "black");
+            line(-25, 10, -35, 40, "black");
             
             // Ovansidan
             line(0,-20,0,-40, 2, "black");
@@ -35,8 +35,12 @@
     
     function start()
     {
-        minSpindel = new Spindel();
-        minSpindel.draw();
+        minaSpindlar = [];
+        for (var i = 0; i < 42; i++)
+        {
+            minaSpindlar[i] = new Spindel();
+        }
+        minaSpindlar[20].draw();
     
     }
     

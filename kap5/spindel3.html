@@ -1,0 +1,61 @@
+<script src="copy_simple.js">
+
+    function Spindel(xSp, ySp)
+    {
+        this.x = totalWidth/2;
+        this.y = totalHeight/2; // Föds i mitten
+        this.xSpeed = xSp;
+        this.ySpeed = ySp;
+        
+ //       this.draw = function()
+        this.update = function()
+        {
+            this.x += this.xSpeed;
+            this.y += this.ySpeed;
+            save();
+            translate(this.x, this.y);
+            
+            scale(0.5, 0.5);
+            circle(0, 0, 20, "black");
+            circle(-10, 0, 20, "black");
+            circle(30, 0, 20, "black");
+            circle(40, 0, 15, "black");
+            line(0,20,0,40, 2, "black");
+            line(-15,20,-20,40, 2, "black");
+            line(10, 10, 20, 40, 2, "black");
+            line(-25, 10, -35, 40, "black");
+            
+            // Ovansidan
+            line(0,-20,0,-40, 2, "black");
+            line(-15,-20,-20,-40, 2,"black");
+            line(10, -10, 20, -40, 2, "black");
+            line(-25, -10, -35, -40, "black");
+
+            restore();
+        }
+    }
+    
+    
+    
+    
+    function start()
+    {
+        minaSpindlar = [];
+        for (var i = 0; i < 42; i++)
+        {
+            minaSpindlar[i] = new Spindel(random(10)-5, random(10)-5);
+        }
+    
+    }
+    
+    function update()
+    {
+        clearScreen();
+        for (var i = 0; i < minaSpindlar.length; i++)
+        {
+            minaSpindlar[i].update();
+        }
+    }
+    
+    
+</script>
