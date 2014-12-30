@@ -1,0 +1,66 @@
+#minCanvas
+{
+
+    float:right;
+    position:absolute;
+    overflow:hidden;
+    right:5px;
+    top:0px;
+    background-color: white;
+}
+
+#radar
+{
+    float:left;
+    position:absolute;
+    overflow:hidden;
+    left:0px;
+    top:0px;
+    background-color: black;
+}
+
+
+
+#myBackground
+{
+    z-index: -1;
+    float:left;
+    position:fixed;
+
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+p
+{
+    color: white;
+    margin: 0;
+    padding: 20px;
+
+    
+}
+
+#textruta
+{
+    top: 203px;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+
+    bottom: 0;
+}
+
+#logo
+{
+    overflow: auto;
+}
+
+
+
+
+

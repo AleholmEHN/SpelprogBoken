@@ -1,0 +1,65 @@
+#minCanvas
+{
+
+    float:right;
+    position:absolute;
+    overflow:hidden;
+    right:5px;
+    top:0px;
+    background-color: white;
+}
+
+#myBackground
+{
+    z-index: -1;
+    float:left;
+    position:fixed;
+
+}
+
+#underskrift
+{
+    border: 2px solid black;
+    z-index: 10;
+    position: relative;
+}
+
+body
+{
+    padding: 0px;
+    margin: 0;
+    overflow: hidden;
+}
+
+p
+{
+    color: black;
+    margin: 0;
+    padding: 20px;
+
+    
+}
+
+#textruta
+{
+    top: 204px;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    height:700px;
+
+    bottom: 0;
+    background-color: white;
+    z-index: 10;
+
+}
+
+#logo
+{
+    overflow: auto;
+}
+
+
+
+
+
