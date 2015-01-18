@@ -1,5 +1,6 @@
 #minCanvas
 {
+
     float:right;
     position:absolute;
     overflow:hidden;
@@ -8,17 +9,14 @@
     background-color: white;
 }
 
+
+
 #myBackground
 {
     z-index: -1;
     float:left;
     position:fixed;
-
-}
-
-#logo
-{
-    overflow: auto;
+    background-color: black;
 }
 
 body
@@ -47,6 +45,10 @@ p
     bottom: 0;
 }
 
+#logo
+{
+    overflow: auto;
+}
 
 
 
